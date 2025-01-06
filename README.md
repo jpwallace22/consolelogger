@@ -1,4 +1,4 @@
-# Consolelogger
+# Console Logger
 
 > [!WARNING]
 > This is not currently intended for public use. You have been warned. 
@@ -19,7 +19,7 @@ It also only supports the languages I use on a day to day basis (TS, Go, and Lua
 --- @field keymaps KeymapsConfig | nil             -- Optional: Keymaps for actions
 
 --- @class KeymapsConfig
---- @field insert_log_current string | nil           -- Optional: Keymap for inserting a log at the current cursor position
+--- @field insert_log_current string | nil           -- Optional: Keymap for inserting a log at the current cursor 
 --- @field insert_log_selection string | nil         -- Optional: Keymap for inserting a log for the current selection
 --- @field clear_logs_current_buffer string | nil    -- Optional: Keymap for clearing logs in the current buffer
 --- @field clear_logs_all_buffers string | nil       -- Optional: Keymap for clearing logs in all buffers
@@ -29,7 +29,7 @@ It also only supports the languages I use on a day to day basis (TS, Go, and Lua
 ### Lazy 
 ```lua
 return {
-	"jpwallace22/consolelogger",
+	"jpwallace22/consolelogger.nvim",
 --- @class ConsoleLoggerOptions
 	opts = {
     ...
@@ -41,7 +41,7 @@ return {
 ### Packer
 ```lua
 use({
-	"jpwallace22/consolelogger",
+	"jpwallace22/consolelogger.nvim",
 	config = function()
 --- @class ConsoleLoggerOptions
 		require("consolelogger").setup({
@@ -54,7 +54,7 @@ use({
 
 ### Vim-Plug
 ```vim
-Plug 'jpwallace22/consolelogger'
+Plug 'jpwallace22/consolelogger.nvim'
 
 lua << EOF
 --- @class ConsoleLoggerOptions
