@@ -1,0 +1,21 @@
+==============================================================================
+CONSOLELOGGER PLUGIN
+
+COMMANDS
+  :ConsoleLoggerClear (alias for clearing logs in current file)
+
+DEFAULT KEYMAPS (customizable in Lua config)
+  <leader>cl      Insert log at cursor
+  <leader>cs      Insert log around selection
+  <leader>cc      Clear logs in current buffer
+  <leader>cC      Clear logs in all open buffers
+
+SETUP
+  lua << EOF
+    require("consolelogger").setup({
+      format = '"Variable:", %s',
+      prefix_filename_line = true,
+    })
+  EOF
+
+==============================================================================
