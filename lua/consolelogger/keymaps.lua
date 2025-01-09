@@ -44,6 +44,10 @@ end
 
 local M = {}
 function M.setup_keymaps()
+	if not keymaps then
+		error("There are no keymaps set for Consolelogger.nvim")
+	end
+
 	for _, data in ipairs(keymapData) do
 		vim.keymap.set(
 			data.mode,
