@@ -16,7 +16,7 @@ local function get_print_statement()
 	return lang_map[ft] or "console.log"
 end
 
---- @param callback fun(format: string|nil): nil Callback function that receives the selected format code or nil if none is selected.
+--- @param callback fun(format: string): nil Callback function that receives the selected format code or nil if none is selected.
 local function select_format(callback)
 	local ft = vim.bo.filetype
 	local options_by_language = {
@@ -47,7 +47,7 @@ local function select_format(callback)
 	local options = options_by_language[ft]
 
 	if not options then
-		callback(nil)
+		callback("")
 		return
 	end
 
