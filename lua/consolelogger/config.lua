@@ -1,4 +1,4 @@
---- @class LanguageConfig
+--- @class LogFuncConfig
 --- @field javascript string
 --- @field typescript string
 --- @field go string
@@ -16,7 +16,7 @@
 --- @field prefix_filename_line boolean | nil      -- Optional: Prefix log statements with filename and line number
 --- @field prefix_function_name boolean | nil      -- Optional: Prefix log statements with the function name
 --- @field decorator string | nil                  -- Optional: The final string between the prefix and the log. Defaults to " ->"
---- @field languages LanguageConfig | nil          -- Optional: Language-specific configurations
+--- @field log_func LogFuncConfig | nil          -- Optional: Language-specific configurations
 --- @field keymaps KeymapsConfig | nil             -- Optional: Keymaps for actions
 
 --- @class ConfigModule
@@ -35,10 +35,10 @@ M.defaults = {
 	prefix_filename_line = false,
 	prefix_function_name = true, -- TODO: add in the functionality for this
 	decorator = " ->",
-	languages = {
+	log_func = {
 		javascript = "console.log",
 		typescript = "console.log",
-		go = "fmt.Printf",
+		go = "fmt.Println",
 		lua = "print",
 	},
 	keymaps = {

@@ -12,37 +12,15 @@ local M = {}
 --- @return string print_statement -- defautls to "console.log"
 local function get_print_statement()
 	local ft = vim.bo.filetype
-	local lang_map = config.options.languages or {}
-	return lang_map[ft] or "console.log"
+	local log_func = config.options.log_func or {}
+	return log_func[ft] or "console.log"
 end
 
 --- @param callback fun(format: string): nil Callback function that receives the selected format code or nil if none is selected.
 local function select_format(callback)
 	local ft = vim.bo.filetype
 	local options_by_language = {
-		go = {
-			"%v -> value in default format",
-			"%+v -> value in default format with field names",
-			"%#v -> Go syntax representation of the value",
-			"%T -> type of the value",
-			"%% -> literal %",
-			"%d -> decimal integer (base 10)",
-			"%b -> binary integer (base 2)",
-			"%o -> octal integer (base 8)",
-			"%x -> hexadecimal integer (base 16, lowercase)",
-			"%X -> hexadecimal integer (base 16, uppercase)",
-			"%c -> character (Unicode code point)",
-			"%U -> Unicode format (e.g., U+1234)",
-			"%q -> single-quoted character literal",
-			"%f -> floating-point number in decimal format",
-			"%e -> scientific notation (lowercase)",
-			"%E -> scientific notation (uppercase)",
-			"%g -> compact format (uses %e or %f)",
-			"%G -> compact format (uses %E or %f)",
-			"%s -> string",
-			"%p -> pointer (memory address)",
-			"%t -> boolean (true or false)",
-		},
+		-- TODO:
 	}
 	local options = options_by_language[ft]
 
